@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>反转链表 | Clog</title>
+    <meta name="description" content="
+原地单链表的反转
+
+思路:
+     原地反转的关键在于保证前一个和下一个结点的引用不丢失
+
+     设置三个指针：  pre 保存上一个节点
+                  temp 保存下一个节点
+                  node 指向当前节点
+
+const reverse = (node)=&gt;{
+    if(!node)return null ...">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.85f7f025.css" as="style"><link rel="preload" href="/assets/js/app.91f21e3e.js" as="script"><link rel="preload" href="/assets/js/6.90d8b0a4.js" as="script"><link rel="preload" href="/assets/js/13.d71f7fb4.js" as="script"><link rel="preload" href="/assets/js/29.048b7ed4.js" as="script"><link rel="prefetch" href="/assets/js/1.d56f86e5.js"><link rel="prefetch" href="/assets/js/10.ff72267f.js"><link rel="prefetch" href="/assets/js/11.59f5d7f5.js"><link rel="prefetch" href="/assets/js/12.e6eda927.js"><link rel="prefetch" href="/assets/js/14.9156b80c.js"><link rel="prefetch" href="/assets/js/15.ebe9143e.js"><link rel="prefetch" href="/assets/js/16.8db30a20.js"><link rel="prefetch" href="/assets/js/17.cc0c9f64.js"><link rel="prefetch" href="/assets/js/18.9f707270.js"><link rel="prefetch" href="/assets/js/19.e2d2a5dc.js"><link rel="prefetch" href="/assets/js/20.7f8ee3cc.js"><link rel="prefetch" href="/assets/js/21.0aa235e4.js"><link rel="prefetch" href="/assets/js/22.cfa270e8.js"><link rel="prefetch" href="/assets/js/23.f8c34a7f.js"><link rel="prefetch" href="/assets/js/24.e6723a1c.js"><link rel="prefetch" href="/assets/js/25.97357a3e.js"><link rel="prefetch" href="/assets/js/26.703c3f31.js"><link rel="prefetch" href="/assets/js/27.e96afafc.js"><link rel="prefetch" href="/assets/js/28.86b3f2bf.js"><link rel="prefetch" href="/assets/js/30.90fe5490.js"><link rel="prefetch" href="/assets/js/31.ca344097.js"><link rel="prefetch" href="/assets/js/32.83250ed9.js"><link rel="prefetch" href="/assets/js/33.59a45ba8.js"><link rel="prefetch" href="/assets/js/34.31d71eb8.js"><link rel="prefetch" href="/assets/js/35.2a21a285.js"><link rel="prefetch" href="/assets/js/36.1eb63e2c.js"><link rel="prefetch" href="/assets/js/37.e8a04ad3.js"><link rel="prefetch" href="/assets/js/38.f2a8450d.js"><link rel="prefetch" href="/assets/js/39.4b323ad2.js"><link rel="prefetch" href="/assets/js/4.da3f28c5.js"><link rel="prefetch" href="/assets/js/40.e4d02bb4.js"><link rel="prefetch" href="/assets/js/41.d97f346b.js"><link rel="prefetch" href="/assets/js/42.c0b7f6e3.js"><link rel="prefetch" href="/assets/js/43.9c9cd0ba.js"><link rel="prefetch" href="/assets/js/44.32c4331b.js"><link rel="prefetch" href="/assets/js/45.481f3a73.js"><link rel="prefetch" href="/assets/js/46.f5c4dfb1.js"><link rel="prefetch" href="/assets/js/47.fbed0faa.js"><link rel="prefetch" href="/assets/js/48.34ddf1fb.js"><link rel="prefetch" href="/assets/js/49.7502fba3.js"><link rel="prefetch" href="/assets/js/5.373ed106.js"><link rel="prefetch" href="/assets/js/50.82dacae5.js"><link rel="prefetch" href="/assets/js/51.dc0fef2d.js"><link rel="prefetch" href="/assets/js/52.d58d65a3.js"><link rel="prefetch" href="/assets/js/53.5cd3b43f.js"><link rel="prefetch" href="/assets/js/54.fc0a65ce.js"><link rel="prefetch" href="/assets/js/55.74c23ecc.js"><link rel="prefetch" href="/assets/js/56.3041bf8b.js"><link rel="prefetch" href="/assets/js/57.9c4088c5.js"><link rel="prefetch" href="/assets/js/58.fa60643d.js"><link rel="prefetch" href="/assets/js/59.f909e076.js"><link rel="prefetch" href="/assets/js/60.010b3e31.js"><link rel="prefetch" href="/assets/js/61.bc9537d9.js"><link rel="prefetch" href="/assets/js/62.a119a55d.js"><link rel="prefetch" href="/assets/js/63.b0fb237b.js"><link rel="prefetch" href="/assets/js/64.21134f44.js"><link rel="prefetch" href="/assets/js/65.c972dbd7.js"><link rel="prefetch" href="/assets/js/66.ef69dd4d.js"><link rel="prefetch" href="/assets/js/67.60192241.js"><link rel="prefetch" href="/assets/js/68.618df896.js"><link rel="prefetch" href="/assets/js/69.3ad3fd15.js"><link rel="prefetch" href="/assets/js/7.4d652f30.js"><link rel="prefetch" href="/assets/js/70.87499cb9.js"><link rel="prefetch" href="/assets/js/71.ce47a87c.js"><link rel="prefetch" href="/assets/js/72.db932d40.js"><link rel="prefetch" href="/assets/js/73.966c165b.js"><link rel="prefetch" href="/assets/js/74.7687c4cc.js"><link rel="prefetch" href="/assets/js/75.f51f93db.js"><link rel="prefetch" href="/assets/js/76.5c278927.js"><link rel="prefetch" href="/assets/js/77.0aa8ba61.js"><link rel="prefetch" href="/assets/js/78.85d4cbe1.js"><link rel="prefetch" href="/assets/js/79.c0e7f722.js"><link rel="prefetch" href="/assets/js/8.d063e324.js"><link rel="prefetch" href="/assets/js/80.f0a9e641.js"><link rel="prefetch" href="/assets/js/81.6ceca6c3.js"><link rel="prefetch" href="/assets/js/82.d5a431da.js"><link rel="prefetch" href="/assets/js/83.336ebe5e.js"><link rel="prefetch" href="/assets/js/84.e651dd7c.js"><link rel="prefetch" href="/assets/js/85.5ee87c80.js"><link rel="prefetch" href="/assets/js/9.92d7f2f1.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.7538008b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.85f7f025.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Clog </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/tech/" class="nav-link">前端</a></li><li class="nav-item"><a href="/book/" class="nav-link">随笔</a></li><li class="nav-item"><a href="/algorithm/index.html" class="nav-link">算法</a></li><li class="nav-item"><a href="https://github.com/yuecai" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Clog </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/tech/" class="nav-link">前端</a></li><li class="mobile-nav-item"><a href="/book/" class="nav-link">随笔</a></li><li class="mobile-nav-item"><a href="/algorithm/index.html" class="nav-link">算法</a></li><li class="mobile-nav-item"><a href="https://github.com/yuecai" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div><div class="content__default"><h3 id="反转链表"><a href="#反转链表" class="header-anchor">#</a> 反转链表</h3> <h4 id="原地单链表的反转"><a href="#原地单链表的反转" class="header-anchor">#</a> 原地单链表的反转</h4> <ul><li><p>思路:
+原地反转的关键在于保证前一个和下一个结点的引用不丢失</p> <p>设置三个指针：  pre 保存上一个节点
+temp 保存下一个节点
+node 指向当前节点</p></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">reverse</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>node<span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token keyword">null</span>
+
+    <span class="token keyword">let</span> pre <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">let</span> temp
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>temp <span class="token operator">=</span> node<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node<span class="token punctuation">.</span>next <span class="token operator">=</span> pre           <span class="token comment">// 反转指针</span>
+        pre <span class="token operator">=</span> node
+        node <span class="token operator">=</span> temp               <span class="token comment">// 移动node指针</span>
+    <span class="token punctuation">}</span>
+    node<span class="token punctuation">.</span>next <span class="token operator">=</span> pre
+
+    <span class="token keyword">return</span> node
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>递归实现:</p> <ul><li>思路:
+每次将下一个结点传给递归函数，如果不存在下一个节点（节点为<code>null</code>）则返回前一个函数的结点(pre)</li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">reverse2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span>temp</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> pre <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">let</span> temp
+
+    <span class="token keyword">return</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">function</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        temp <span class="token operator">=</span> node<span class="token punctuation">.</span>next
+        node<span class="token punctuation">.</span>next <span class="token operator">=</span> pre
+        pre <span class="token operator">=</span> node
+        <span class="token keyword">return</span> <span class="token function">handle</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="区间反转"><a href="#区间反转" class="header-anchor">#</a> 区间反转</h4> <ul><li>思路:
+1.新建一个守卫，指向第一个结点（为了解决边界问题，防治出现区间<code>前一个结点(front)</code>就是区间<code>开始结点(enter)</code> 的情况)
+2.将节点搜索到区间前一个结点 <code>(front)</code>,区间开始结点<code>(enter)</code>
+3.新建指针<code>cur</code>、<code>pre</code>、<code>temp</code> 反转区间的结点
+4.退出循环后，<code>cur</code>指针指向的应该是区间后的一个结点
+5.将<code>front</code>指向区间反转后的头结点<code>pre</code>,
+6.将<code>enter</code>指向<code>cur</code></li></ul> <p>如果没有想到建立一个守卫，很容易因为边界条件头晕</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">reversBetween</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> m<span class="token punctuation">,</span> n</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> originNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">nodeList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    originNode<span class="token punctuation">.</span>next <span class="token operator">=</span> node   <span class="token comment">// 新建一个虚拟结点是为解决边界问题</span>
+
+    <span class="token keyword">const</span> count <span class="token operator">=</span> n <span class="token operator">-</span> m
+    <span class="token keyword">let</span> p <span class="token operator">=</span> originNode
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        p <span class="token operator">=</span> p<span class="token punctuation">.</span>next
+    <span class="token punctuation">}</span> 
+
+    <span class="token keyword">let</span> front <span class="token operator">=</span> p <span class="token comment">// 区间前一个节点</span>
+    <span class="token keyword">let</span> cur <span class="token operator">=</span> p<span class="token punctuation">.</span>next<span class="token punctuation">,</span>
+        enter <span class="token operator">=</span> p<span class="token punctuation">.</span>next<span class="token punctuation">,</span>   <span class="token comment">// 区间开始结点</span>
+        pre <span class="token operator">=</span> <span class="token keyword">null</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> count<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment">// 反转区间中的结点</span>
+        <span class="token keyword">let</span> temp <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        cur<span class="token punctuation">.</span>next <span class="token operator">=</span> pre
+        pre <span class="token operator">=</span> cur
+        cur <span class="token operator">=</span> temp
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 退出循环后， pre指向的是区间最后一个结点， cur指向的是区间后面的一个节点</span>
+
+    front<span class="token punctuation">.</span>next <span class="token operator">=</span> pre
+    enter<span class="token punctuation">.</span>next <span class="token operator">=</span> cur
+    <span class="token keyword">return</span> originNode<span class="token punctuation">.</span>next
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h4 id="两个一组反转链表"><a href="#两个一组反转链表" class="header-anchor">#</a> 两个一组反转链表</h4> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">reversTwo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>node<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>node<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token keyword">return</span> node
+
+    <span class="token keyword">const</span> origin <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    origin<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+    <span class="token keyword">let</span> node1<span class="token punctuation">,</span> node2
+    <span class="token keyword">let</span> p <span class="token operator">=</span> origin
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>node1 <span class="token operator">=</span> p<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>node2 <span class="token operator">=</span> p<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        node1<span class="token punctuation">.</span>next <span class="token operator">=</span> node2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        node2<span class="token punctuation">.</span>next <span class="token operator">=</span> node1<span class="token punctuation">;</span>
+        p<span class="token punctuation">.</span>next <span class="token operator">=</span> node2<span class="token punctuation">;</span>
+        p <span class="token operator">=</span> node1<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> head
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></div></div></div> <footer class="footer" data-v-582f9766><div class="footer-left-wrap" data-v-582f9766><ul class="contact" data-v-582f9766></ul></div> <div class="footer-right-wrap" data-v-582f9766><ul class="copyright" data-v-582f9766></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.91f21e3e.js" defer></script><script src="/assets/js/6.90d8b0a4.js" defer></script><script src="/assets/js/13.d71f7fb4.js" defer></script><script src="/assets/js/29.048b7ed4.js" defer></script>
+  </body>
+</html>
