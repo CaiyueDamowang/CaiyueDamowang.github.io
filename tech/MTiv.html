@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>美团面经 | Clog</title>
+    <meta name="description" content="
+
+大约持续了一个小时40分钟
+
+在此整理所有的面试题和答案
+
+1.Vue响应式原理
+
+阅读Vue源码
+
+2.watch和computed区别（这个没了解过）
+
+mounted(){
+    this.message = 1
+    this.message = 2
+    this.message = 3
+}
+
+watch(){
+    mes ...">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.18c2a749.css" as="style"><link rel="preload" href="/assets/js/app.4b1e1b3d.js" as="script"><link rel="preload" href="/assets/js/6.90d8b0a4.js" as="script"><link rel="preload" href="/assets/js/13.d71f7fb4.js" as="script"><link rel="preload" href="/assets/js/70.c9686c06.js" as="script"><link rel="prefetch" href="/assets/js/1.d56f86e5.js"><link rel="prefetch" href="/assets/js/10.618b6d7a.js"><link rel="prefetch" href="/assets/js/11.59f5d7f5.js"><link rel="prefetch" href="/assets/js/12.e6eda927.js"><link rel="prefetch" href="/assets/js/14.29a562a6.js"><link rel="prefetch" href="/assets/js/15.4f4d6e84.js"><link rel="prefetch" href="/assets/js/16.5ab9252e.js"><link rel="prefetch" href="/assets/js/17.48db5f67.js"><link rel="prefetch" href="/assets/js/18.272c5b8f.js"><link rel="prefetch" href="/assets/js/19.c9e43428.js"><link rel="prefetch" href="/assets/js/20.e5f4711e.js"><link rel="prefetch" href="/assets/js/21.d2b26fab.js"><link rel="prefetch" href="/assets/js/22.ba442cb0.js"><link rel="prefetch" href="/assets/js/23.ba51e662.js"><link rel="prefetch" href="/assets/js/24.19d39f17.js"><link rel="prefetch" href="/assets/js/25.5142b57a.js"><link rel="prefetch" href="/assets/js/26.e6eb7937.js"><link rel="prefetch" href="/assets/js/27.ac6841a2.js"><link rel="prefetch" href="/assets/js/28.7c8307c8.js"><link rel="prefetch" href="/assets/js/29.8c95c4fa.js"><link rel="prefetch" href="/assets/js/30.635aaf7f.js"><link rel="prefetch" href="/assets/js/31.7b59d342.js"><link rel="prefetch" href="/assets/js/32.35ad53ae.js"><link rel="prefetch" href="/assets/js/33.6c299105.js"><link rel="prefetch" href="/assets/js/34.5f2e1be8.js"><link rel="prefetch" href="/assets/js/35.580b2561.js"><link rel="prefetch" href="/assets/js/36.7bb33ebe.js"><link rel="prefetch" href="/assets/js/37.52a5a396.js"><link rel="prefetch" href="/assets/js/38.0ebe221e.js"><link rel="prefetch" href="/assets/js/39.1015c0f8.js"><link rel="prefetch" href="/assets/js/4.da3f28c5.js"><link rel="prefetch" href="/assets/js/40.020bd197.js"><link rel="prefetch" href="/assets/js/41.65a65194.js"><link rel="prefetch" href="/assets/js/42.55cdbd80.js"><link rel="prefetch" href="/assets/js/43.8422be2c.js"><link rel="prefetch" href="/assets/js/44.33668108.js"><link rel="prefetch" href="/assets/js/45.b3ded315.js"><link rel="prefetch" href="/assets/js/46.eadeca92.js"><link rel="prefetch" href="/assets/js/47.60081668.js"><link rel="prefetch" href="/assets/js/48.8468270c.js"><link rel="prefetch" href="/assets/js/49.444245e4.js"><link rel="prefetch" href="/assets/js/5.373ed106.js"><link rel="prefetch" href="/assets/js/50.0bf638aa.js"><link rel="prefetch" href="/assets/js/51.601c1994.js"><link rel="prefetch" href="/assets/js/52.7432a82b.js"><link rel="prefetch" href="/assets/js/53.2cbb88f8.js"><link rel="prefetch" href="/assets/js/54.566e00a5.js"><link rel="prefetch" href="/assets/js/55.82bdae2c.js"><link rel="prefetch" href="/assets/js/56.352a9bcf.js"><link rel="prefetch" href="/assets/js/57.6b43514a.js"><link rel="prefetch" href="/assets/js/58.319eb472.js"><link rel="prefetch" href="/assets/js/59.5cbf1070.js"><link rel="prefetch" href="/assets/js/60.fe45dcb3.js"><link rel="prefetch" href="/assets/js/61.995eb879.js"><link rel="prefetch" href="/assets/js/62.4348c455.js"><link rel="prefetch" href="/assets/js/63.2db97682.js"><link rel="prefetch" href="/assets/js/64.c7e8215e.js"><link rel="prefetch" href="/assets/js/65.5933a627.js"><link rel="prefetch" href="/assets/js/66.1c91b950.js"><link rel="prefetch" href="/assets/js/67.56564cf6.js"><link rel="prefetch" href="/assets/js/68.8e27cc57.js"><link rel="prefetch" href="/assets/js/69.dc7a5b90.js"><link rel="prefetch" href="/assets/js/7.80766424.js"><link rel="prefetch" href="/assets/js/71.94965ca3.js"><link rel="prefetch" href="/assets/js/72.db932d40.js"><link rel="prefetch" href="/assets/js/73.219c2885.js"><link rel="prefetch" href="/assets/js/74.61dac4ea.js"><link rel="prefetch" href="/assets/js/75.9cd96759.js"><link rel="prefetch" href="/assets/js/76.033a832e.js"><link rel="prefetch" href="/assets/js/77.2b4c01f0.js"><link rel="prefetch" href="/assets/js/78.f706efe9.js"><link rel="prefetch" href="/assets/js/79.7452cf1e.js"><link rel="prefetch" href="/assets/js/8.389698f0.js"><link rel="prefetch" href="/assets/js/80.43bda541.js"><link rel="prefetch" href="/assets/js/81.cccd7099.js"><link rel="prefetch" href="/assets/js/82.127202ad.js"><link rel="prefetch" href="/assets/js/83.0d1a76a2.js"><link rel="prefetch" href="/assets/js/84.891f115c.js"><link rel="prefetch" href="/assets/js/85.daa5d9b4.js"><link rel="prefetch" href="/assets/js/86.9deeb1ca.js"><link rel="prefetch" href="/assets/js/87.42df0bbb.js"><link rel="prefetch" href="/assets/js/88.89edd320.js"><link rel="prefetch" href="/assets/js/89.478f49dc.js"><link rel="prefetch" href="/assets/js/9.92d7f2f1.js"><link rel="prefetch" href="/assets/js/90.2feb1628.js"><link rel="prefetch" href="/assets/js/91.37ccfe14.js"><link rel="prefetch" href="/assets/js/92.46cda28b.js"><link rel="prefetch" href="/assets/js/93.7d0867e8.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.7538008b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.18c2a749.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Clog </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/tech/" class="nav-link router-link-active">前端</a></li><li class="nav-item"><a href="/book/" class="nav-link">随笔</a></li><li class="nav-item"><a href="/algorithm/index.html" class="nav-link">算法</a></li><li class="nav-item"><a href="https://github.com/yuecai" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Clog </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/tech/" class="nav-link router-link-active">前端</a></li><li class="mobile-nav-item"><a href="/book/" class="nav-link">随笔</a></li><li class="mobile-nav-item"><a href="/algorithm/index.html" class="nav-link">算法</a></li><li class="mobile-nav-item"><a href="https://github.com/yuecai" target="_blank" rel="noopener noreferrer" class="nav-link external">GitHub</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div><div class="content__default"><h1 id="美团面经"><a href="#美团面经" class="header-anchor">#</a> 美团面经</h1> <p>大约持续了一个小时40分钟</p> <p>在此整理所有的面试题和答案</p> <h2 id="_1-vue响应式原理"><a href="#_1-vue响应式原理" class="header-anchor">#</a> 1.Vue响应式原理</h2> <p><a href="./vue/2-29">阅读Vue源码</a></p> <h2 id="_2-watch和computed区别（这个没了解过）"><a href="#_2-watch和computed区别（这个没了解过）" class="header-anchor">#</a> 2.watch和computed区别（这个没了解过）</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token number">2</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">watch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">message</span><span class="token operator">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'log'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>打印几次？  答案： 1次</p> <p>vue的异步队列机制</p> <p>所以只有1次</p> <ul><li><p>computed特性</p> <p>1.是计算值，
+2.应用：就是简化tempalte里面{{}}计算和处理props或$emit的传值
+3.具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数</p></li> <li><p>watch特性</p> <p>1.是观察的动作，
+2.应用：监听props，$emit或本组件的值执行异步操作
+3.无缓存性，页面重新渲染时值不变化也会执行</p></li></ul> <h3 id="_3-给一个场景。一个eleinput组件包装一下，开发者怎么让外部组件能够访问到eleinput的特性（没答上来）"><a href="#_3-给一个场景。一个eleinput组件包装一下，开发者怎么让外部组件能够访问到eleinput的特性（没答上来）" class="header-anchor">#</a> 3.给一个场景。一个Eleinput组件包装一下，开发者怎么让外部组件能够访问到Eleinput的特性（没答上来）</h3> <p>this.$attibute</p> <h2 id="_4-浏览器进程，渲染原理"><a href="#_4-浏览器进程，渲染原理" class="header-anchor">#</a> 4.浏览器进程，渲染原理</h2> <p><a href="/tech/http://47.98.159.95/my_blog/browser-render/003.html">神三元大神的文章</a></p> <h2 id="_5-进程和线程的区别"><a href="#_5-进程和线程的区别" class="header-anchor">#</a> 5.进程和线程的区别</h2> <p>进程是资源分配的最小单位，线程是CPU调度的最小单位</p> <p>在一个进程内，线程的部分资源可以共享</p> <h2 id="_6-浏览器事件模型"><a href="#_6-浏览器事件模型" class="header-anchor">#</a> 6.浏览器事件模型</h2> <p>清空执行栈=&gt;清空微任务队列=&gt; 提取宏任务队列一个任务放到执行栈 =&gt; 清空执行栈....</p> <p>7.chrome新做了那些优化</p> <p>。。。</p> <h2 id="_8-v8对数组做了哪些优化"><a href="#_8-v8对数组做了哪些优化" class="header-anchor">#</a> 8.V8对数组做了哪些优化</h2> <p>。。。</p> <p>无洞： 元素有下标而未赋值</p> <p>预分配数组长度小于等于100000,或数组无洞，底层采用C数组实现；空间换时间</p> <p>预分配数组长度大于100000，数组有洞，底层采用哈希表实现；时间换空间</p> <p>处于字典模式（哈希表实现）的数组，在每次空间增长时，V8的启发式算法会检查其空间占用量， 若其空洞元素减少到一定程度，则会将其转化为高速模式（C数组）。</p> <h2 id="_9-js数组和其他语言数组有什么不一样"><a href="#_9-js数组和其他语言数组有什么不一样" class="header-anchor">#</a> 9.JS数组和其他语言数组有什么不一样</h2> <div class="language- extra-class"><pre><code>JS的数组也是一个对象
+
+下标都是这个对象的键名，每当添加一个元素会执行一些内置操作，比如自动为下标+1
+
+以前看过一篇文章搜不到了，可以更改数组的机制检查出来数组的机制
+
+其他语言为数组开辟的是一块连续的内存空间
+</code></pre></div><h2 id="_10-数组和链表有什么区别，使用场景"><a href="#_10-数组和链表有什么区别，使用场景" class="header-anchor">#</a> 10.数组和链表有什么区别，使用场景</h2> <div class="language- extra-class"><pre><code>数组的内存空间是连续的，可以实现随机存储
+
+链表的内存空间是带有指向不连续的
+
+增加删除，链表快
+
+查询更改，数组快
+</code></pre></div><h2 id="_11-手写快排"><a href="#_11-手写快排" class="header-anchor">#</a> 11.手写快排</h2> <p>本来用循环实现，让我改成递归，写懵了，没写出来</p> <h2 id="_12-实现防抖"><a href="#_12-实现防抖" class="header-anchor">#</a> 12.实现防抖</h2> <h2 id="_13-考察预编译，作用域"><a href="#_13-考察预编译，作用域" class="header-anchor">#</a> 13.考察预编译，作用域</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span>
+
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">show</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> x <span class="token operator">=</span><span class="token number">20</span>
+    <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_14-js的基础类型"><a href="#_14-js的基础类型" class="header-anchor">#</a> 14.js的基础类型</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">null</span> <span class="token operator">==</span> <span class="token keyword">undefined</span>
+<span class="token keyword">null</span> <span class="token operator">===</span> <span class="token keyword">undefined</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="_15-原型继承，原型链"><a href="#_15-原型继承，原型链" class="header-anchor">#</a> 15.原型继承，原型链</h2> <div class="language- extra-class"><pre><code>Object.prototype ？ null
+Function.prototye ? Object
+</code></pre></div><h2 id="_16-学习哪些新技术"><a href="#_16-学习哪些新技术" class="header-anchor">#</a> 16.学习哪些新技术</h2> <p>TS</p> <h2 id="_17-css剧中"><a href="#_17-css剧中" class="header-anchor">#</a> 17.css剧中</h2> <h2 id="_18-bfc-margin塌陷"><a href="#_18-bfc-margin塌陷" class="header-anchor">#</a> 18.bfc margin塌陷</h2> <h2 id="_19-文档流是怎么排列的"><a href="#_19-文档流是怎么排列的" class="header-anchor">#</a> 19.文档流是怎么排列的</h2> <h2 id="_20-position的四个属性讲一下"><a href="#_20-position的四个属性讲一下" class="header-anchor">#</a> 20.position的四个属性讲一下</h2> <h2 id="_21-http2和1有什么区别"><a href="#_21-http2和1有什么区别" class="header-anchor">#</a> 21.HTTP2和1有什么区别</h2> <div class="language- extra-class"><pre><code>多路复用
+首部压缩
+服务端推送
+</code></pre></div><h2 id="_22-多路复用对webpack构建有什么影响，我们怎么适应新特性"><a href="#_22-多路复用对webpack构建有什么影响，我们怎么适应新特性" class="header-anchor">#</a> 22.多路复用对webpack构建有什么影响，我们怎么适应新特性</h2> <div class="language- extra-class"><pre><code>...
+</code></pre></div><h2 id="_23-js底层的一些问题忘记了"><a href="#_23-js底层的一些问题忘记了" class="header-anchor">#</a> 23.JS底层的一些问题忘记了</h2> <h2 id="_24-实现阶乘"><a href="#_24-实现阶乘" class="header-anchor">#</a> 24.实现阶乘</h2> <div class="language- extra-class"><pre><code>复杂度为多少 On
+能不能优化到 O1
+
+不能。。。尾递归优化
+</code></pre></div><h2 id="_25-call-apply-bind"><a href="#_25-call-apply-bind" class="header-anchor">#</a> 25.call apply bind</h2> <h2 id="_26-vue3了解过吗，为什么用proxy"><a href="#_26-vue3了解过吗，为什么用proxy" class="header-anchor">#</a> 26.Vue3了解过吗，为什么用proxy</h2> <h2 id="_27-讲一下跨域"><a href="#_27-讲一下跨域" class="header-anchor">#</a> 27.讲一下跨域</h2> <div class="language- extra-class"><pre><code>a.meituan.com  =&gt; b.meituan.com 算跨域吗 ： 算
+
+Cors解决方案?
+
+options预检请求什么时候发送?
+
+后端是怎么处理cors？
+
+浏览器的同源策略？
+</code></pre></div><h2 id="_28-promise"><a href="#_28-promise" class="header-anchor">#</a> 28.promise</h2> <div class="language- extra-class"><pre><code>求打印结果
+</code></pre></div><h2 id="_29-都去哪些网站了解新技术"><a href="#_29-都去哪些网站了解新技术" class="header-anchor">#</a> 29.都去哪些网站了解新技术</h2> <h1 id="第二天复试"><a href="#第二天复试" class="header-anchor">#</a> 第二天复试</h1> <h2 id="vue虚拟结点的作用"><a href="#vue虚拟结点的作用" class="header-anchor">#</a> Vue虚拟结点的作用</h2> <h2 id="mvvc设计模式"><a href="#mvvc设计模式" class="header-anchor">#</a> MVVC设计模式</h2> <h2 id="编译原理"><a href="#编译原理" class="header-anchor">#</a> 编译原理</h2> <p>考察我计算机基础知识（非专业）
+讲一下词法分析？太久之前看了点。但没答上来
+面试官说精通编译原理，两天就学会了java</p> <h2 id="一道简单算法题"><a href="#一道简单算法题" class="header-anchor">#</a> 一道简单算法题</h2> <h2 id="推荐我读龙书（过程会很痛苦）"><a href="#推荐我读龙书（过程会很痛苦）" class="header-anchor">#</a> 推荐我读龙书（过程会很痛苦）</h2></div></div></div> <footer class="footer" data-v-582f9766><div class="footer-left-wrap" data-v-582f9766><ul class="contact" data-v-582f9766></ul></div> <div class="footer-right-wrap" data-v-582f9766><ul class="copyright" data-v-582f9766></ul></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.4b1e1b3d.js" defer></script><script src="/assets/js/6.90d8b0a4.js" defer></script><script src="/assets/js/13.d71f7fb4.js" defer></script><script src="/assets/js/70.c9686c06.js" defer></script>
+  </body>
+</html>
